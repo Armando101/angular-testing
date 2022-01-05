@@ -33,6 +33,7 @@ const listBook: Book[] = [
 describe('Cart component', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
+  let service: BookService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -47,6 +48,8 @@ describe('Cart component', () => {
     fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    service = fixture.debugElement.injector.get(BookService);
+    spyOn(service, 'getBooksFromCart').and.callFake(() => listBook);
   });
 
   it('should create', () => {
@@ -63,7 +66,6 @@ describe('Cart component', () => {
     const actions = 'plus';
     const book = { ...listBook[0] };
 
-    const service = fixture.debugElement.injector.get(BookService);
     const spy1 = spyOn(service, 'updateAmountBook').and.callFake(() => null);
     const spy2 = spyOn(component, 'getTotalPrice').and.callFake(() => null);
 
@@ -79,7 +81,6 @@ describe('Cart component', () => {
     const actions = 'minus';
     const book = { ...listBook[0] };
 
-    const service = fixture.debugElement.injector.get(BookService);
     const spy1 = spyOn(service, 'updateAmountBook').and.callFake(() => null);
     const spy2 = spyOn(component, 'getTotalPrice').and.callFake(() => null);
 

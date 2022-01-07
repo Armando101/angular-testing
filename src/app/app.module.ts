@@ -5,19 +5,19 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
-  providers: [
-    BookService
-  ],
-  bootstrap: [AppComponent]
+  providers: [BookService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

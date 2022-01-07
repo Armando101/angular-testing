@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -11,23 +10,9 @@ import { CartComponent } from './cart/cart.component';
 import { NavModule } from '../nav/nav.module';
 import { ReduceTextPipe } from './reduce-text/reduce-text.pipe';
 
-
 @NgModule({
-  imports: [
-    BrowserModule,
-    CommonModule,
-    NavModule,
-    PagesRoutingModule,
-  ],
-  declarations: [
-    PagesComponent,
-    HomeComponent,
-    CartComponent,
-    ReduceTextPipe,
-  ],
-  exports: [
-    PagesComponent,
-  ]
+  imports: [BrowserModule, CommonModule, NavModule, PagesRoutingModule],
+  declarations: [PagesComponent, HomeComponent, CartComponent, ReduceTextPipe],
+  exports: [PagesComponent],
 })
-export class PagesModule { }
-
+export class PagesModule {}

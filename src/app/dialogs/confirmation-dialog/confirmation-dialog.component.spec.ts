@@ -8,7 +8,7 @@ const matDialogRefMock = {
 
 const matDialogData = {};
 
-fdescribe('Confirm dialog component', () => {
+describe('Confirm dialog component', () => {
   let component: ConfirmDialogComponent;
   let fixture: ComponentFixture<ConfirmDialogComponent>;
 
